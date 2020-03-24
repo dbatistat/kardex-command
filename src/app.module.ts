@@ -16,7 +16,7 @@ export const CommandHandlers = [AddProductHandler, UpdateProductTransactionHandl
       exchanges: [
         {
           name: 'kardex',
-          type: 'direct',
+          type: 'topic',
         },
       ],
     }),

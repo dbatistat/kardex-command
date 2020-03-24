@@ -29,10 +29,4 @@ export class AppService {
       new UpdateProductTransactionCommand(product.id, product.qty, product.price),
     );
   }
-
-  deleteProduct(id: number) {
-    return this.commandBus.execute(
-      new DeleteProductTransactionCommand(id),
-    );
-  }
 }

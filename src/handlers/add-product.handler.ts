@@ -10,6 +10,7 @@ export class AddProductHandler implements IQueryHandler<AddProductCommand> {
   }
 
   public async execute(command: AddProductCommand): Promise<void> {
-    this.amqpConnection.publish('kardex', 'add-product', command);
+    console.log('SEND ADD-PRODUCT', command);
+    this.amqpConnection.publish('kardex', 'products', {route: 'add-product', data: command});
   }
 }

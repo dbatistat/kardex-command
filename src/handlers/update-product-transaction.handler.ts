@@ -10,6 +10,7 @@ export class UpdateProductTransactionHandler implements IQueryHandler<UpdateProd
   }
 
   public async execute(command: UpdateProductTransactionCommand): Promise<void> {
-    this.amqpConnection.publish('kardex', 'update-product', command);
+    console.log('SEND UPDATE-PRODUCT', command);
+    this.amqpConnection.publish('kardex', 'products', {route: 'update-product', data: command});
   }
 }
