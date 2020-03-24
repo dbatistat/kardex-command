@@ -1,13 +1,12 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { DeleteProductTransactionHandler } from './handlers/delete-product-transaction.handler';
 import { CqrsModule } from '@nestjs/cqrs';
 import { RabbitMQModule } from '@nestjs-plus/rabbitmq';
 import { AddProductHandler } from './handlers/add-product.handler';
 import { UpdateProductTransactionHandler } from './handlers/update-product-transaction.handler';
 
-export const CommandHandlers = [AddProductHandler, UpdateProductTransactionHandler, DeleteProductTransactionHandler];
+export const CommandHandlers = [AddProductHandler, UpdateProductTransactionHandler];
 
 @Module({
   imports: [
